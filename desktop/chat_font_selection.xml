@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="chat_font_selection">
+		<frame>utilitybox</frame>
+		<placement>
+			<size width="520" height="480" />
+			<nosave />
+		</placement>
+		<sizelimits>
+			<minimum width="520" height="480" />
+			<dynamic />
+		</sizelimits>
+		<playercontrol />
+		<nodelete />
+		<sheetdata>
+			<windowtitlebar name="title">
+				<script>
+					local setValueOriginal;
+					function onInit()
+						setValueOriginal = super.setValue;
+						super.setValue = setValue;
+						if super and super.onInit then
+							super.onInit();
+						end
+					end
+					function setValue(sTitle)
+						local sName = DB.getValue(window.getDatabaseNode(), "name", "");
+						if sName ~= "" then
+							sTitle = sName .. " - " .. sTitle;
+						end
+						setValueOriginal(sTitle);
+					end
+				</script>
+				<resource>chat_font_window_title</resource>
+			</windowtitlebar>
+			<anchor_title_utilitybox name="contentanchor" />
+
+			<windowlist name="list">
+				<anchored to="contentanchor">
+					<top anchor="bottom" relation="relative" offset="20" />
+					<left />
+					<right offset="-7" />
+					<bottom parent="" offset="-20" />
+				</anchored>
+				<datasource>.chat.fonts</datasource>
+				<class>font_selection</class>
+				<sortby><control>name</control></sortby>
+			</windowlist>
+			<scrollbar_list />
+
+			<close_utilitybox />
+			<resize_utilitybox />
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="font_selection">
+		<margins control="0,0,0,5" />
+		<script file="desktop/scripts/font_selection.lua" />
+		<sheetdata>
+			<label name="name">
+				<anchored position="insidetopleft" offset="0,15" width="120" height="20" />
+			</label>
+			<comboboxc name="options">
+				<anchored position="insidetopleft" offset="3,35" width="120" height="20" />
+				<listmaxsize>12</listmaxsize>
+				<listdirection>down</listdirection>
+			</comboboxc>
+			<stringcontrol name="example">
+				<anchored height="55">
+					<left parent="name" anchor="right" offset="35" />
+					<top offset="20" />
+					<right offset="-22" />
+				</anchored>
+				<frame name="chatbox" offset="20,15,20,0" />
+				<multilinespacing>20</multilinespacing>
+				<readonly />
+				<static textres="font_selection_example_text" />
+			</stringcontrol>
+		</sheetdata>
+	</windowclass>
+</root>

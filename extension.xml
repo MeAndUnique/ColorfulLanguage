@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root release="3.0" version="3">
+	<properties>
+		<name>Colorful Language</name>
+		<version>1.0</version>
+		<loadorder>150</loadorder>
+		<author>MeAndUnique</author>
+		<description>Allows for the selection of colors used by characters in the chat window.</description>
+	</properties>
+
+	<base>
+		<!-- XML file containing new strings -->
+		<includefile source="strings/strings.xml" />
+		<!-- XML file containing new icons -->
+		<includefile source="graphics/icons.xml" />
+
+		<script name="ChatManagerCL" file="scripts/manager_chat_cl.lua" />
+		<script name="GmIdentityManagerCL" file="scripts/manager_gmidentity_cl.lua" />
+
+		<includefile source="campaign/template_char.xml" />
+		<includefile source="common/template_common.xml" />
+		<includefile source="desktop/desktop_classes.xml" />
+		<includefile source="desktop/chat_font_selection.xml" />
+	</base>
+
+	<announcement text="Colorful Language v1.0 for 5E by MeAndUnique." font="emotefont" icon="ColorfulLanguage" />
+
+</root>

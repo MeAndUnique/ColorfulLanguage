@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="chat" merge="join">
+		<sheetdata>
+			<basicchatentry name="entry">
+				<script file="desktop/scripts/chat_entry.lua" />
+			</basicchatentry>
+			<basicchatwindow name="chat">
+				<script file="desktop/scripts/chat_window.lua" />
+			</basicchatwindow>
+		</sheetdata>
+	</windowclass>
+</root>

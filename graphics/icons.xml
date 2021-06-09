@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+	<icon name="ColorfulLanguage" file="graphics/icons/ColorfulLanguage.png" />
+	<icon name="radial_font" file="graphics/radial/icon_text_speaker.png" />
+</root>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<template name="button_charactivate">
+		<buttoncontrol>
+			<icon normal="button_speak" pressed="button_speak_down" />
+			<script>
+				function onInit()
+					if Session.IsLocal then
+						setVisible(false);
+					elseif Session.IsHost then
+						setTooltipText(Interface.getString("char_tooltip_speak"));
+					else
+						setTooltipText(Interface.getString("char_tooltip_activate"));
+					end
+					
+					registerMenuItem(Interface.getString("chat_menu_set_color"), "radial_font", 5);
+				end
+				function onMenuSelection(selection, subselection)
+					if selection == 5 then
+						local nodeActor = window.getDatabaseNode();
+						ChatManagerCL.initializeCharacterFonts(nodeActor)
+						Interface.openWindow("chat_font_selection", nodeActor.getPath());
+					end
+				end
+				function onButtonPress()
+					local nodeWin = window.getDatabaseNode();
+					if Session.IsHost then
+						GmIdentityManager.addIdentity(window.name.getValue(), false, nodeWin);
+					else
+						if nodeWin then
+							local identityname = nodeWin.getName();
+
+							User.setCurrentIdentity(identityname);
+
+							if CampaignRegistry and CampaignRegistry.colortables and CampaignRegistry.colortables[identityname] then
+								local colortable = CampaignRegistry.colortables[identityname];
+								User.setCurrentIdentityColors(colortable.color or "000000", colortable.blacktext or false);
+							end
+						end
+					end
+				end
+			</script>
+		</buttoncontrol>
+	</template>
+</root>

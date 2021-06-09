@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>	
+	<template name="button_activateid">
+		<buttoncontrol>
+			<icon normal="button_speak" pressed="button_speak_down" />
+			<script>
+				function onInit()
+					registerMenuItem(Interface.getString("chat_menu_set_color"), "radial_font", 5);
+				end
+				function onMenuSelection(selection, subselection)
+					if selection == 5 then
+						local nodeActor = window.getDatabaseNode();
+						ChatManagerCL.initializeCharacterFonts(nodeActor)
+						Interface.openWindow("chat_font_selection", nodeActor.getPath());
+					end
+				end
+				function onButtonPress()
+					local node = window.getDatabaseNode();
+					local sName = ActorManager.getDisplayName(node);
+					GmIdentityManager.addIdentity(sName, false, node);
+				end
+			</script>
+			<gmvisibleonly />
+		</buttoncontrol>
+	</template>
+</root>

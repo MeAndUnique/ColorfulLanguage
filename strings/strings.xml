@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>chat_font_window_title
+	<string name="chat_menu_set_color">Set Chat Font</string>
+	<string name="chat_font_window_title">Chat Fonts</string>
+	<string name="font_selection_example_text">MeAndUnique literally lost sleep thinking about what text to put here, and this is it.</string>
+
+	<string name="chatname">Chat</string>
+	<string name="emotename">Emote</string>
+	<string name="chatgmname">GM</string>
+	<string name="msgname">Message</string>
+	<string name="narratorname">Narrator</string>
+	<string name="chatnpcname">NPC</string>
+	<string name="oocname">OOC</string>
+	<string name="playerchatname">Player</string>
+	<string name="systemname">System</string>
+	<string name="whispername">Whisper</string>
+
+	<string name="chatfontname">Brown</string>
+	<string name="chatgmfontname">Black, Bold Italic</string>
+	<string name="chatnpcfontname">Blue</string>
+	<string name="emotefontname">Red</string>
+	<string name="msgfontname">Purple 1</string>
+	<string name="narratorfontname">Brown, Bold</string>
+	<string name="oocfontname">Green</string>
+	<string name="systemfontname">Purple 2</string>
+	<string name="whisperfontname">Purple, Bold</string>
+</root>
