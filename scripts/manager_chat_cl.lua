@@ -142,5 +142,8 @@ function resolveCharacterFont(messagedata)
 end
 
 function resolveGeneralFont(messagedata)
+	if not messagedata.font then
+		messagedata.font = "msgfont";
+	end
 	messagedata.font = DB.getValue("chat.fonts." .. messagedata.font, messagedata.font);
 end

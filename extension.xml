@@ -2,8 +2,7 @@
 <root release="3.0" version="3">
 	<properties>
 		<name>Colorful Language</name>
-		<version>1.0</version>
-		<loadorder>150</loadorder>
+		<version>1.0.1</version>
 		<author>MeAndUnique</author>
 		<description>Allows for the selection of colors used by characters in the chat window.</description>
 	</properties>
@@ -23,6 +22,6 @@
 		<includefile source="desktop/chat_font_selection.xml" />
 	</base>
 
-	<announcement text="Colorful Language v1.0 for 5E by MeAndUnique." font="emotefont" icon="ColorfulLanguage" />
+	<announcement text="Colorful Language v1.0.1 for 5E by MeAndUnique." font="emotefont" icon="ColorfulLanguage" />
 
 </root>
